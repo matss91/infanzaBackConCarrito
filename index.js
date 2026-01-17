@@ -4,6 +4,6 @@ const connectDB = require("./src/config/db");
 
 connectDB();
 
-app.listen(4000, () => {
-  console.log("Servidor corriendo en puerto 4000");
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
 });
