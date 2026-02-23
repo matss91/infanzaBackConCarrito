@@ -1,6 +1,8 @@
-const mercadopago = require('mercadopago');
+// config/mercadoPago.js
+const { MercadoPagoConfig, Preference } = require('mercadopago');
 
-// Configura tu Access Token
-mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN);
+const client = new MercadoPagoConfig({
+  accessToken: process.env.MP_ACCESS_TOKEN || 'TU_ACCESS_TOKEN'
+});
 
-module.exports = mercadopago;
+module.exports = { client, Preference };
